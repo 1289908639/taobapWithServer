@@ -1,0 +1,74 @@
+/*body*/
+li{
+    list-style: none;
+}
+.container{
+    width: 1200px !important;
+}
+* {
+    margin:0;
+    padding:0;
+}
+img {
+    vertical-align: middle;
+}
+body {
+    background: #fbf8f8;
+}
+/*头部样式*/
+
+.sticky-wrapper, .navbar-header{
+    height: 70px;
+}
+.sticky-wrapper .container{
+
+    width: 1200px;
+    height: 70px;
+}
+.collapse{
+    margin-top: 10px;
+}
+.navbar{
+    background-color: #fff;
+}
+.collapse .nav li a{
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 16px;
+    color: #000000;
+}
+#position{
+    margin-right: 50px;
+}
+#position a i{
+    font-style: normal;
+}
+#position #city:hover{
+    color: #e94840;
+}
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+    color: #000000;
+    text-decoration: none;
+    background-color: #fff;
+    box-shadow: none;
+}
+.navbar .nav > .active > a{
+    color: #e94840 !important;
+    background-color: #fff;
+}
+.collapse .nav li a:hover{
+    color: #e94840;
+}
+.shanghu{
+    background-color: #e94840;
+    padding: 4px 6px !important;
+    border-radius: 4px;
+    margin: 11px 0 0 15px;
+    color: #ffffff !important;
+}
+#shanghu:hover{
+    background-color: #e94840;
+    color: #fff;
+}
