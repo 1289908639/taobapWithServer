@@ -10,12 +10,12 @@
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./css/header.css">
 	<link rel="stylesheet" href="./css/footer.css">
+	<script src="js/template-web.js"></script>
 	<script src="./js/jQuery.js"></script>
 
 	<!--banner效果引入的-->
 	<script src="./js/index.js"></script>
 	<script src="js/slide.js"></script>
-	<script src="js/template-web.js"></script>
 	<script type="text/javascript">
 
 	</script>
@@ -265,13 +265,13 @@
 </div>
 <!---->
 
-<script id="item" type="text/html">
-	{{each seller}}
+<script id="item1" type="text/html">
+	{{each service}}
 	<div class="box1">
 		<div class="fff">
 			<div class="servicebody">
 				<div class="navigation">
-					<span class="serviceIndex">{{seller.name}}</span>
+					<span class="serviceIndex">{{$value.name}}</span>
 					<span class="serviceType">小时工/开荒保洁/擦玻璃/深度保洁/家居养护/杀虫除螨</span>
 				</div>
 				<div class="servicetags">
@@ -340,6 +340,7 @@
 			</div>
 		</div>
 	</div>
+	{{/each}}
 </script>
 
 

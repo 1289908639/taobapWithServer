@@ -18,11 +18,13 @@ $(function () {
 	})
 	var seller = {};
 	$.get('/service', function (data) {
-		console.log(data);
+		// console.log(data);
 		if (data.code == 0) {
 			seller = data.data;
 		    console.log(seller)
-		    let html = template('item',seller)
+		    let html = template('item1',seller)
+			console.log(html)
+			$("body").append(html)
 		}
 	})
 
