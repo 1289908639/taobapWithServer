@@ -1,6 +1,7 @@
 {
   "city":{
     "hotcity":[
+      {"cityname":"北京","code":"beijing"},
       {"cityname":"上海","code":"shanghai"},
       {"cityname":"深圳","code":"shenzheng"},
       {"cityname":"广州","code":"guangzhou"},
@@ -71,6 +72,132 @@
       ]},
       {
         "order":"E",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"F",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"G",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"H",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"I",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"J",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"K",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"L",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"M",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"N",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"O",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"P",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"Q",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"R",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"S",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"T",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"U",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"V",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"W",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"X",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"Y",
+        "list":[
+          {"cityname":"鄂尔多斯","code":"eerduosi"},
+          {"cityname":"鄂州","code":"ezhou"}
+      ]},
+      {
+        "order":"Z",
         "list":[
           {"cityname":"鄂尔多斯","code":"eerduosi"},
           {"cityname":"鄂州","code":"ezhou"}

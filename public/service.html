@@ -12,6 +12,10 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/footer.css">
+	<script src="js/template-web.js"></script>
+	<script src="./js/jQuery.js"></script>
+	<script type="text/javascript" src="js/footer.js"></script>
+	<!--<script src="./js/index.js"></script>-->
 </head>
 
 <body>
@@ -28,13 +32,13 @@
 				<div class="collapse navbar-collapse navbar-right" id="main-menu">
 					<ul class="nav navbar-nav" id="navbar-nav">
 						<li id="position">
-							<a href="/position">
+							<a href="/position.html">
 								<img src="img/citypoint.png" width="20" height="auto">
 								<i id="showCity" style="margin-right:5px;color:#000">北京</i>
 								<i id="city">切换城市</i>
 							</a>
 						</li>
-						<li class="active">
+						<li>
 							<a href="/">
 								首页
 							</a>
@@ -44,11 +48,11 @@
 								下载APP
 							</a>
 						</li>
-						<li>
+						<li class="active">
 							<a href="/service.html">服务商</a>
 						</li>
 						<li>
-							<a href="/information.html">商家入驻</a>
+							<a href="/information.html" target="_blank">商家入驻</a>
 						</li>
 						<li>
 							<a href="/aboutus.html">
@@ -73,165 +77,18 @@
 		<div class="centerleft">
 			<div class="tabdiv">
 				<h2 class="service-title">服务商</h2>
-				<ul class="ulactivety">
-
-					<li id="800ff6443dd043b39c7f17ede21dfc9d">
-						<img src="http://img.daoway.cn/img/2017/01/20/c3a2490e-04fc-43de-9a05-8a62dce47f57_thumb.jpg">
-						<p><img src="img/home1.png"><b>宜生到家</b></p>
-						<p class="pp">已接单13004单<i>好评98%</i></p>
-					</li>
-
-					<li id="c8e42f7716124bd2ad23c95445002d88"><img
-							src="http://img.daoway.cn/img/2016/12/28/5cf8680f-0264-4686-ba05-145700db6063_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>云家政</b></p>
-						<p class="pp">已接单29019单<i>好评86%</i></p>
-					</li>
-
-					<li id="dab8bd7932194f07ba754b116f196bbd"><img
-							src="http://img.daoway.cn/img/2016/11/11/450b3aac-c628-4e2f-bed0-331b47136f5b_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>蓝犀牛</b></p>
-						<p class="pp">已接单2189单<i>好评98%</i></p>
-					</li>
-
-					<li id="fba4e31f6c07416baef89bcbfbf5c910"><img
-							src="http://img.daoway.cn/img/2016/08/24/94117c68-1048-473b-8370-dc40ab66c3e0_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>三鼎家政</b></p>
-						<p class="pp">已接单15526单<i>好评84%</i></p>
-					</li>
-
-					<li id="c89bbd38967e47038e80a370c81044b8"><img
-							src="http://img.daoway.cn/img/2015/10/20/7ae90a81-e216-42bd-baf2-4500d870cc78_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>云足疗</b></p>
-						<p class="pp">已接单860单<i>好评95%</i></p>
-					</li>
-
-					<li id="0568391fbf7c44a3a73456bbfeb714c4"><img
-							src="http://img.daoway.cn/img/2016/06/21/6441ca7d-cd34-4474-870d-2ee9180232f6_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>哈喽维修</b></p>
-						<p class="pp">已接单235单<i>好评98%</i></p>
-					</li>
-
-					<li id="80999f240bac4e309a28ebf03a7fd34b"><img
-							src="http://img.daoway.cn/img/2015/12/28/d53343ce-5818-4ebf-9948-d13aa100ef72_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>e修鸽</b></p>
-						<p class="pp">已接单1705单<i>好评94%</i></p>
-					</li>
-
-					<li id="8616542175644a689ac470075138a203"><img
-							src="http://img.daoway.cn/img/2016/09/20/314afa69-1924-465b-89a2-cb65302dea68_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>洁道夫</b></p>
-						<p class="pp">已接单1071单<i>好评91%</i></p>
-					</li>
-
-					<li id="03aa500a7fae4f78a7b671f7b7f16d1c"><img
-							src="http://img.daoway.cn/img/2016/02/19/21762b1d-08e9-4dd8-847a-baee2b3b94a3_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>魔魔达</b></p>
-						<p class="pp">已接单872单<i>好评97%</i></p>
-					</li>
-
-					<li id="075cbb77e906416eaf21e3a232d91088"><img
-							src="http://img.daoway.cn/img/2016/09/20/31043989-f708-4be6-8990-e85fd903fd0f_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>悦管家</b></p>
-						<p class="pp">已接单1895单<i>好评93%</i></p>
-					</li>
-
-					<li id="2316d6d972554724afe616a1a1e98c7e"><img
-							src="http://img.daoway.cn/img/2017/02/14/e2b168c4-c462-48e8-a3a6-dabf56e409b6_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>十分到家</b></p>
-						<p class="pp">已接单3587单<i>好评96%</i></p>
-					</li>
-
-					<li id="233f096f9d474e009408d8728a58795d"><img
-							src="http://img.daoway.cn/img/2016/09/12/1861ffae-b30c-4bd7-8f32-a7212ca7028b_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>牛牛家电清洗</b></p>
-						<p class="pp">已接单285单<i>好评91%</i></p>
-					</li>
-
-					<li id="fd904ce10ec0426dbb54f15cd63ab05a"><img
-							src="http://img.daoway.cn/img/2017/04/27/7529c8e8-d0d5-4bf5-9865-bbe291715079_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>家侍</b></p>
-						<p class="pp">已接单266单<i>好评93%</i></p>
-					</li>
-
-					<li id="2e913ecc1ebe4033b28b2fe0dfbae1f0"><img
-							src="http://img.daoway.cn/img/2017/07/13/2ef5ee91-ce30-4dc1-989b-f8ceaf41f7cb_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>美道家</b></p>
-						<p class="pp">已接单181单<i>好评100%</i></p>
-					</li>
-
-					<li id="cb255185c2834d6ea419ca0fa7e19d3a"><img
-							src="http://img.daoway.cn/img/2017/04/07/3b0faa5c-fb6a-44a9-8251-d79a4a700a56_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>极客修</b></p>
-						<p class="pp">已接单671单<i>好评98%</i></p>
-					</li>
-
-					<li id="c123d552dcb14207aa22cda6ea82f649"><img
-							src="http://img.daoway.cn/img/2016/11/08/e874effd-75d5-408a-84a9-73bfe135b666_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>美着呢</b></p>
-						<p class="pp">已接单182单<i>好评92%</i></p>
-					</li>
-
-					<li id="cd5d48815ff44110a0456d77237ccb1c"><img
-							src="http://img.daoway.cn/img/2016/01/26/07744489-e94e-41ef-a971-5d01a0db7b8b_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>理大师</b></p>
-						<p class="pp">已接单1293单<i>好评98%</i></p>
-					</li>
-
-					<li id="092ea053025d453ca03320c527fe7914"><img
-							src="http://img.daoway.cn/img/2017/01/04/1a613387-b206-4404-866a-b787ce234c56_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>想帮帮</b></p>
-						<p class="pp">已接单108单<i>好评100%</i></p>
-					</li>
-
-					<li id="5905572d6a79469ca300fb38dd120b66"><img
-							src="http://img.daoway.cn/img/2016/09/27/3d2c1284-6a2e-482f-b497-786eac9ae6b4_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>e清洗</b></p>
-						<p class="pp">已接单296单<i>好评82%</i></p>
-					</li>
-
-					<li id="244a8691e9594b3dbbc3913ea4685185"><img
-							src="http://img.daoway.cn/img/2017/07/14/0a2b606a-fdf4-4e79-a1b3-b254dfe5f731_thumb.jpg"
-							width="210" height="210">
-						<p style="margin-top: 15px"><img style="margin-bottom: 5px" src="img/home1.png" width="18"
-						                                 height="17"><b>极吼吼手机维修</b></p>
-						<p class="pp">已接单400单<i>好评93%</i></p>
-					</li>
+				<ul id="serverList" class="ulactivety">
+					<script id="serverItem" type="text/html">
+						{{each fuwushang}}
+							{{if $index<20}}
+								<li id="{{$value.serviceId}}" data-count="{{$index}}">
+									<img src="{{$value.info.img}}">
+									<p><img src="img/home1.png"><b>{{$value.name}}</b></p>
+									<p class="pp">已接单{{$value.info.bill}}单<i>好评{{$value.info.goodratings}}%</i></p>
+								</li>
+							{{/if}}
+						{{/each}}
+					</script>
 
 				</ul>
 			</div>
@@ -360,5 +217,45 @@
 		<p>©2015 版权所有  到位 daoway.com 京ICP备15001471号-1 北京邻家科技有限公司</p>
 	</div>
 </div>
+<script type="text/javascript">
+    $.get('/service', function (res) {
+	    var data = {}
+	    if (res.code === 0) {
+		    data = res.data;
+	    };
+	    // start 模拟懒加载
+		// 构造一个新的数组
+	    var i = 0;
+	    var newData = data.fuwushang.slice(0+i,1+i);
+		// 构造一个新的对象
+	    var fuwushang= {
+	    	fuwushang:newData
+	    };
+		//页面加载时渲染模板
+	    let serverItem = template('serverItem',fuwushang);
+		$('#serverList').append(serverItem);
+
+		// 给 加载更多 绑定事件
+	    $('#getServiceList').click(function () {
+	    	i++;
+		    newData = data.fuwushang.slice(0+i,1+i);
+		    fuwushang= {
+			    fuwushang:newData
+		    };
+			// 点击时渲染页面
+		    serverItem = template('serverItem',fuwushang);
+		    $('#serverList').append(serverItem);
+	    })
+
+	    // 给每一服务绑定点击事件
+		$('#serverList').delegate('li', 'click', function () {
+			// 根据服务商ID来跳转到指定的服务列表
+			window.location.href = "/fuwushang?serviceId="+this.id;
+		})
+    });
+    $('#jiameng').delegate('img', 'click', function () {
+	    window.location.href = "/information.html";
+    });
+</script>
 </body>
 </html>

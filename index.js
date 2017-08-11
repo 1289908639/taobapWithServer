@@ -24,16 +24,19 @@ app.use(express.static("public"));
 
 
 
-let position = Mock.mock({
+/*let position = Mock.mock({
 	code:0,
 	data:pdata
-})
+})*/
 
 app.get('/' ,(req ,res) => {
     res.render('test.html')
 })
 app.get('/position', (req,res) => {
-    res.send(position)
+    res.send({
+	    code:0,
+	    data:pdata
+    })
 })
 app.get('/service', (req,res) => {
 	res.send({

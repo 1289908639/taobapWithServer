@@ -885,7 +885,7 @@
 .hotcity ul{
     background-color: #f8f8f8;
 }
-.quicklycity ul li.fist {
+.quicklycity ul .fist {
     padding: 0 10px;
     height: 24px;
     text-align: center;
@@ -899,6 +899,10 @@
     display: inline-block;
     text-align: center;
     margin: 0 0.5%;
+}
+.quicklycity ul li a {
+    text-decoration: none;
+    color: #000000;
 }
 
 /*服务分类页面*/
