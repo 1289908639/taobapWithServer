@@ -460,7 +460,7 @@
     background: #fff;
     cursor: pointer;
 }
-.ulactivety li:nth-child(4n){
+.ulactivety li:nth-of-type(4n){
     margin-right: 0;
 }
 .ulactivety li>img{

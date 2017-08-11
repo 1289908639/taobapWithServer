@@ -5,7 +5,8 @@ $(function () {
     $('.footer').delegate('i', 'click', function () {
 	    // console.log($(this).html());
 	    window.localStorage.setItem("location",$(this).html());
-	    $('#showCity').html($(this).html())
+	    $('#showCity').html($(this).html());
+	    window.location.href = "/service.html"
     });
     
     /*$('#city').click(function () {
