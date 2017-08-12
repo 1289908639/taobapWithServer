@@ -14,7 +14,6 @@
 	<link rel="stylesheet" href="css/footer.css">
 	<script type="text/javascript" src="js/template-web.js"></script>
 	<script type="text/javascript" src="js/jQuery.js"></script>
-	<script type="text/javascript" src="js/footer.js"></script>
 </head>
 
 <body>
@@ -89,17 +88,18 @@
 			<ul class="qk">
 				<script id="qkCity" type="text/html">
 					{{each cityclassify}}
-						<li>{{$value.order}}</li>
+						<li data-qk="{{$index}}">{{$value.order}}</li>
 					{{/each}}
 				</script>
 			</ul>
 		</div>
 	</div>
+	<div class="placePadding"></div>
 	<div id="cityList">
 		<script id="cityItem" type="text/html">
 		    {{each cityclassify}}
 		    <div class="hotcity" id="{{$value.order}}">
-			    <h3>{{$value.order}}</h3>
+			    <h3 data-ci="{{$index}}">{{$value.order}}</h3>
 			    <ul class="cy">
 					{{each $value.list}}
 				        <li class="classify_city">{{$value.cityname}}</li>
@@ -115,18 +115,21 @@
 	$.get('/position', function (res) {
 		if (res.code === 0) {
 		    var position = res.data;
-		};
-		// console.log(position);
-		// 热门城市
-		var hotCity = template('hotCity',position.city);
-		$('.ht').append(hotCity);
+			// console.log(position);
+			// 热门城市
+			var hotCity = template('hotCity',position.city);
+			$('.ht').append(hotCity);
 
-		// 首字母列表
-		var qkCity = template('qkCity', position.city);
-		$('.qk').append(qkCity);
-		// 城市按字母排序列表
-		var cityItem = template('cityItem', position.city);
-		$('#cityList').append(cityItem);
+			// 首字母列表
+			var qkCity = template('qkCity', position.city);
+			$('.qk').append(qkCity);
+			//
+			$('.qk li:nth-of-type(1)').addClass('fist');
+			// 城市按字母排序列表
+			var cityItem = template('cityItem', position.city);
+			$('#cityList').append(cityItem);
+		};
+
 	});
 	// 热门城市点击事件
 	$('.ht').delegate('li','click',function () {
@@ -140,13 +143,18 @@
 	$('.qk').delegate('li', 'click',function () {
 		$('.qk li').removeClass('fist');
 		$(this).addClass('fist');
-		if ($('.hotcity').id === $(this).html()) {
-		    console.log($('.hotcity').id)
-		}
-//		console.log($('.hotcity').id);
 
-
-//		console.log($(this).html());
+		// 实现列表滚动
+		// 乘以1把字符串转换为数字，加1 是因为 $(this)中第一个是script标签
+		var dataqk = $(this).attr('data-qk')*1+1;
+		var eleTop = $($('.hotcity')[dataqk]).offset().top - 354;
+		$('body').scrollTop(eleTop);
+	});
+	$('#cityList').delegate('.classify_city', 'click', function () {
+		localStorage.setItem('location', $(this).html());
+		$('#showCity').html(localStorage.getItem("location"));
+		// 修改完数据以后 跳转到 指定页面
+		window.location.href = '/service.html';
 	})
 
 </script>

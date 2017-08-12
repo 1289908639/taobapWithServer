@@ -32,6 +32,10 @@ app.use(express.static("public"));
 app.get('/' ,(req ,res) => {
     res.render('test.html')
 })
+/*app.get('/fuwushang',(req, res) => {
+	console.log(req);
+    res.redirect('/fuwushang.html')
+})*/
 app.get('/position', (req,res) => {
     res.send({
 	    code:0,

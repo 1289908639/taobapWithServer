@@ -1,19 +1,11 @@
 $(function () {
-	// 获取城市列表信息
-	var city = {};
-	$.get('/position', function (data) {
-		if (data.code==0) {
-		    city = data.city;
-		}
-	})
-	
 	//通过ajax请求并保存服务商信息
 	var data = {};
 	$.get('/service', function (res) {
 		if (res.code == 0) {
 			data = res.data;
 		    // console.log(data.service)
-			let navList = template("navList", data);
+			var navList = template("navList", data);
 		    $('#navUl').append(navList);
 		    
 			// 首页 菜单交互效果 必须在数据返回后才能执行此段代码
@@ -31,7 +23,7 @@ $(function () {
 			//修改数组
 			data.category.map((value, index) => {
 				//console.log(value.category);
-				let service = data.service.filter((val, index) => {
+				var service = data.service.filter((val, index) => {
 					return val.category === value.category
 				})
 				// 给每一个分类 添加一个经过过滤的数组，这些数组是从service 数组中过滤出来的
@@ -40,19 +32,10 @@ $(function () {
 			});
 			
 			// 渲染首页的列表的模板
-			let homeList = template('item1',data);
+			var homeList = template('item1',data);
 			// console.log(homeList)
 			$("#homeList").append(homeList);
 			
-			// 服务商页面
-			console.log(data)
-			
-			
-			
 		}
 	})
-	
-	
-	
-	
 });

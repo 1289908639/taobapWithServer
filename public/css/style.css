@@ -874,8 +874,11 @@
     width: 1200px;
     margin: 0 auto;
 }
-.hotcity:nth-child(2){
-    margin-top: 300px;
+/*.hotcity:nth-child(2){*/
+    /*margin-top: 300px;*/
+/*}*/
+.placePadding{
+    height: 264px;
 }
 .hotcity .ht li{
     float: left;
