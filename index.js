@@ -15,19 +15,50 @@ const app = express();
 
 
 // 设置模板
-app.engine('art', require('express-art-template'));
+/*app.engine('art', require('express-art-template'));
 app.set('view options', {
 	debug: process.env.NODE_ENV !== 'production'
-});
+});*/
 
+
+// 设置模板 EJS
+app.set("view engine", "ejs");
+app.set("views", "views");
+
+// 设置静态资源
 app.use(express.static("public"));
-
+// 设置bodyParser中间件，处理post请求的请求参数
+app.use(bodyParser());
 
 
 /*let position = Mock.mock({
 	code:0,
 	data:pdata
 })*/
+app.post('/info', (req, res) => {
+    let info = req.body;
+	
+    res.render('info.ejs',info)
+})
+app.post('/login', (req, res) => {
+    let login = req.body;
+    if (login.username=='admin'&&login.password=='admin') {
+        res.send('登录成功，假装有页面！');
+    }else {
+    	res.send('登录失败，假装有页面！')
+    }
+});
+
+app.post('/regist', (req, res) => {
+	let login = req.body;
+	if (login.username=='admin'&&login.password=='admin') {
+		res.send('注册成功，假装有页面！');
+	}else {
+		res.send('注册失败，假装有页面！')
+	}
+})
+
+
 
 app.get('/' ,(req ,res) => {
     res.render('test.html')

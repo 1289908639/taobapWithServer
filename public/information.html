@@ -12,6 +12,11 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/footer.css">
+	<style type="text/css">
+	    .error{
+		    color: red;
+	    }
+	</style>
 	<script type="text/javascript" src="js/jQuery.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.js"></script>
 	<script type="text/javascript" src="js/footer.js"></script>
@@ -146,75 +151,81 @@
 <div class="cooperationwrap">
 	<div class="cooperation-container">
 		<p>提交<i>合作</i>信息</p>
-		<form class="form-horizontal" action="index.html" method="get">
+		<form class="form-horizontal" id="info" action="/info" method="post">
 			<div class="form-group">
 				<label for="corpname" class="col-sm-3 control-label">公司名称：</label>
 				<div class="col-sm-9">
 					<input type="text" name="corpname" class="form-control" id="corpname"
-					       placeholder="填写公司名称" required>
+					       placeholder="填写公司名称">
 				</div>
 			</div>
-			<div class="form-group">
+			<div class="form-group" id="classify">
 				<label for="website" class="col-sm-3 control-label">服务项目：</label>
 				<div class="col-sm-9 checkboxstyle">
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="baojie" type="checkbox">家庭保洁
+							<input name="fenlei" type="checkbox" class="error">
+							<label id="fenlei-error" class="error" for="fenlei" style="display: inline-block;">Please enter at least 2 characters.</label>家庭保洁
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="anmo" type="checkbox">上门按摩
+							<input name="fenlei" type="checkbox">家庭保洁
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="weixiu" type="checkbox">维修
+							<input name="fenlei" type="checkbox">上门按摩
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="qingxi" type="checkbox">家电清洗
+							<input name="fenlei" type="checkbox">维修
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="xiyi" type="checkbox">洗衣洗鞋
+							<input name="fenlei" type="checkbox">家电清洗
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="yueshao" type="checkbox">保姆月嫂
+							<input name="fenlei" type="checkbox">洗衣洗鞋
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="banjia" type="checkbox">搬家
+							<input name="fenlei" type="checkbox">保姆月嫂
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="yangche" type="checkbox">上门养车
+							<input name="fenlei" type="checkbox">搬家
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="xianhua" type="checkbox">鲜花
+							<input name="fenlei" type="checkbox">上门养车
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="meirong" type="checkbox">美容美体
+							<input name="fenlei" type="checkbox">鲜花
+						</label>
+					</div>
+					<div class="checkbox chosemuti">
+						<label>
+							<input name="fenlei" type="checkbox">美容美体
 						</label>
 					</div>
 					<div class="form-group chosemuti">
 						<label for="other">其他:</label>
-						<input type="text" name="qita" class="form-control input-sm inlineinput" id="other" placeholder="其他">
+						<input type="text" name="fenlei" class="form-control input-sm inlineinput" id="other" placeholder="其他">
 					</div>
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="telphone" class="col-sm-3 control-label">联系电话：</label>
+				<label for="telphone" class="col-sm-3 control-label" >联系电话：</label>
 				<div class="col-sm-9">
 					<input type="number" name="telphone" class="form-control" id="telphone" placeholder="填写联系电话">
 				</div>
@@ -376,28 +387,60 @@
 </div>
 </body>
 <script type="text/javascript">
-
+	// 表单验证
 	$(function () {
-		$.extend($.validator.messages, {
-			required: "必填",
-			remote: "请修正该字段",
-			email: "电子邮件格式不正确",
-			url: "网址格式不正确",
-			date: "日期格式不正确",
-			dateISO: "请输入合法的日期 (ISO).",
-			number: "请输入数字",
-			digits: "只能输入整数",
-			creditcard: "请输入合法的信用卡号",
-			equalTo: "请再次输入相同的值",
-			accept: "请输入拥有合法后缀名的字符",
-			maxlength: $.validator.format("请输入一个 长度最多是 {0} 的字符"),
-			minlength: $.validator.format("请输入一个 长度最少是 {0} 的字符"),
-			rangelength: $.validator.format("请输入 一个长度介于 {0} 和 {1} 之间的字符"),
-			range: $.validator.format("请输入一个介于 {0} 和 {1} 之间的值"),
-			max: $.validator.format("请输入一个最大为{0} 的值"),
-			min: $.validator.format("请输入一个最小为{0} 的值")
+		$('#fenlei-error').parent().parent().css("display","none");
+		console.log($('#fenlei-error').parent())
+		// 在键盘按下并释放及提交后验证提交表单
+		$("#info").validate({
+			rules: {
+				"fenlei":{
+					required: "#classify",
+					minlength: 2},
+				corpname: {
+					required: true,
+					minlength: 4
+				},
+				telphone: {
+					required: true,
+					minlength: 6,
+					digits:true
+				},
+				contactperson: {
+					required: true,
+				},
+				servercity: {
+					required: true,
+				},
+				ability: {
+					required: true,
+					digits: true,
+					min: 0
+				},
+				openserv: {
+					required: true
+				}
+			},
+			messages: {
+				corpname: {
+					required: "请输入公司名字",
+					minlength: "至少输入4个数字"
+				},
+				telphone: {
+					required: "请输入正确的电话号码",
+					minlength: "至少6位数"
+				},
+				contactperson: {
+					required: "请输入联系人",
+				},
+				servercity: {
+					required: "请输入城市名",
+				},
+				ability: {
+					required: "请输入接单能力",
+				}
+			}
 		});
-		console.log($.extend())
 	});
 </script>
 </html>
