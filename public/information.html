@@ -16,6 +16,14 @@
 	    .error{
 		    color: red;
 	    }
+		#fenlei-error{
+			display: inline-block;
+			height: 30px;
+			line-height: 30px;
+			margin: 7px 0 15px;
+			font-weight: bold;
+			display: none !important;
+		}
 	</style>
 	<script type="text/javascript" src="js/jQuery.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.js"></script>
@@ -159,15 +167,9 @@
 					       placeholder="填写公司名称">
 				</div>
 			</div>
-			<div class="form-group" id="classify">
+			<fieldset class="form-group" id="classify">
 				<label for="website" class="col-sm-3 control-label">服务项目：</label>
 				<div class="col-sm-9 checkboxstyle">
-					<div class="checkbox chosemuti">
-						<label>
-							<input name="fenlei" type="checkbox" class="error">
-							<label id="fenlei-error" class="error" for="fenlei" style="display: inline-block;">Please enter at least 2 characters.</label>家庭保洁
-						</label>
-					</div>
 					<div class="checkbox chosemuti">
 						<label>
 							<input name="fenlei" type="checkbox">家庭保洁
@@ -223,7 +225,7 @@
 						<input type="text" name="fenlei" class="form-control input-sm inlineinput" id="other" placeholder="其他">
 					</div>
 				</div>
-			</div>
+			</fieldset>
 			<div class="form-group">
 				<label for="telphone" class="col-sm-3 control-label" >联系电话：</label>
 				<div class="col-sm-9">
@@ -389,14 +391,15 @@
 <script type="text/javascript">
 	// 表单验证
 	$(function () {
-		$('#fenlei-error').parent().parent().css("display","none");
-		console.log($('#fenlei-error').parent())
+        $('.checkboxstyle').append($('#fenlei-error').detach())
+		//$('#fenlei-error').parent().parent().css("display","none");
+		//console.log($('#fenlei-error').parent())
 		// 在键盘按下并释放及提交后验证提交表单
 		$("#info").validate({
 			rules: {
 				"fenlei":{
 					required: "#classify",
-					minlength: 2},
+					minlength: 1},
 				corpname: {
 					required: true,
 					minlength: 4
@@ -416,12 +419,12 @@
 					required: true,
 					digits: true,
 					min: 0
-				},
-				openserv: {
-					required: true
 				}
 			},
 			messages: {
+                "fenlei":{
+                    required: "这个列表想是必选的",
+                    minlength: "至少选择2项"},
 				corpname: {
 					required: "请输入公司名字",
 					minlength: "至少输入4个数字"
@@ -441,6 +444,13 @@
 				}
 			}
 		});
+		$('#subinfo').click(function () {
+		    setTimeout(function () {
+                $('.checkboxstyle').append($('#fenlei-error').detach());
+                $('#fenlei-error').css("display",'inline-block')
+            },10)
+
+        })
 	});
 </script>
 </html>
