@@ -96,11 +96,11 @@
 				<script id="navList" type="text/html">
 					{{each category}}
 					<li class="navname navlist">
-						<a href="/fuwu?category={{$value.category}}" target="_blank"></a>
+						<a href="/fuwu.html?category={{$value.category}}" target="_blank"></a>
 						<i>{{$value.name}}</i>
 						<ul class="navhid">
 							{{each $value.subCategory}}
-							<li><a href="/fuwu?category={{$value.category}}&CName={{$value.CName}}" target="_blank">{{$value.subName}}</a></li>
+							<li><a href="/fuwu.html?category={{$value.category}}&CName={{$value.CName}}" target="_blank">{{$value.subName}}</a></li>
 							{{/each}}
 						</ul>
 					</li>
@@ -126,7 +126,7 @@
 					<div class="servicetags">
 						<div class="tagsListHeader">
 					<span class="lookMore">
-						<a href="/fuwu?category={{$value.category}}">更多服务&gt;</a>
+						<a href="/fuwu.html?category={{$value.category}}">更多服务&gt;</a>
 					</span>
 						</div>
 						<div class="row">
@@ -134,7 +134,7 @@
 							{{each $value.service}}
 							<!--只渲染前5个-->
 							{{if $index<5}}
-							<a class="form-group shopList" href="/detail?detailId={{$value.detailId}}&CNtag={{$value.CNtag}}">
+							<a class="form-group shopList" href="/detail.html?detailId={{$value.detailId}}&CNtag={{$value.CNtag}}">
 								<div class="col-md-3 col-xs-6 member-container ServiceBorder">
 									<img src="{{$value.img}}" class="serviceImg" width="210px" height="210px">
 									<div class="serviceName">{{$value.title}}</div>

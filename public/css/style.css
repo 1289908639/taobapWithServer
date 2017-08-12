@@ -967,7 +967,7 @@
 }
 
 /*fuwu 左侧页面*/
-.fuwu-left{
+.classify-list .fuwu-left{
     background-color: #fff;
     border: 1px solid #eaeaea;
     padding: 0px;
@@ -1084,6 +1084,9 @@
 .ctop .spm .oldpic{
     margin-left: 40px;
     color: #898989;;
+    font-size: 14px;
+    color: #898989;
+    font-weight: normal;
 }
 .ctop .spm .oldpic em{
     text-decoration: line-through;
@@ -1254,6 +1257,7 @@
 .detial .fuwu-left{
     background-color: transparent;
     border:none;
+    width: 960px;
 }
 .dtop {
     height: 220px;
@@ -1344,6 +1348,8 @@
 .detial .fuwu-right{
     background-color: transparent;
     border: none;
+    width: 230px;
+    /*width: 958px;*/
 }
 .fuwu-qr{
     text-align: center;
@@ -1355,14 +1361,14 @@
     height: 80px;
     margin: 40px 50px 10px;
 }
-.fuwu-qr p:nth-child(2){
+.fuwu-qr p:nth-child(3){
     font-size: 16px;
     font-weight: bold;
     line-height: 36px;
     padding:0 10px;
     margin-bottom: 20px;
 }
-.fuwu-qr p:nth-child(n+3){
+.fuwu-qr p:nth-child(n+4){
     text-align: left;
     padding: 0 20px;
     line-height: 36px;
@@ -1536,10 +1542,14 @@
     color: #898989;
 }
 /*右侧部分*/
-.centerright{
+.content .centerright{
     width: 230px;
     float: right;
 }
+.centerright .erweima img{
+    width: 130px;
+}
 .erweima2{
     margin-top: 0px;
+    background:url("../img/fuwushang2_07.jpg") center no-repeat;
 }

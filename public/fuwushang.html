@@ -66,28 +66,31 @@
 		</nav>
 	</div>
 </header>
-
-<div class="htit">
-	<div class="htit-center">
-		<div class="htit-left">
-			<b>云家政</b>
-			<i>营业时间：<em>08:00-20:00</em></i>
-			<i>最近可预约时间：<em>08月09日 17:30</em></i>
+<!--标题部分-->
+<div id="title" class="htit">
+	<script id="titlecenter" type="text/html">
+		<div class="htit-center">
+			<div class="htit-left">
+				<b>{{name}}</b>
+				<i>营业时间：<em>{{info.servetime}}</em></i>
+				<i>最近可预约时间：<em>{{info.subscribeDate}} {{info.subscribeTime}}</em></i>
+			</div>
+			<div class="htit-right">
+				<ul class="clearfix">
+					<li><i>{{info.bill}}</i>成功接单<em>|</em></li>
+					<li><i>{{info.billrate}}%</i>接单率<em>|</em></li>
+					<li><i>{{info.goodratings}}%</i>好评率</li>
+				</ul>
+			</div>
 		</div>
-		<div class="htit-right">
-			<ul class="clearfix">
-				<li><i>29052</i>成功接单<em>|</em></li>
-				<li><i>96%</i>接单率<em>|</em></li>
-				<li><i>86%</i>好评率</li>
-			</ul>
-		</div>
-	</div>
+	</script>
 </div>
+<!--二级导航条-->
 <div class="navtit">
-	<ul>
-		<li class=""><a href="javascript:;">服务项目</a></li>
+	<ul class="navi">
+		<li class="slibingsclor"><a href="javascript:;">服务项目</a></li>
 		<li id="infro" class=""><a href="javascript:;">商家简介</a></li>
-		<li class="slibingsclor"><a href="#profile">用户评论</a></li>
+		<li class=""><a href="javascript:;">用户评论</a></li>
 	</ul>
 </div>
 <div class="service-center content" style="margin-top: 22px">
@@ -95,372 +98,100 @@
 		<h3>
 			<span class="paihang"><i class="activity">服务项目</i></span>
 		</h3>
-		<div class="boxtab xianshi">
+		<div id="serviceList">
+			<script id="serviceItem" type="text/html">
+		        {{each fuwuItem}}
+		        <div class="boxtab xianshi">
+			        <div id="{{$value.detailId}}" class="ctop ctopH" style="height: 200px;">
+				        <img class="pic" src="{{$value.img}}" width="150" height="150">
+				        <span class="spm spm2">
+	                        <i>{{$value.title}}</i>
+		                    <i style="color: #929292">{{$value.serveDisc}}</i>
+		                    <i class="price"><b style="margin-left: 0">{{$value.price}}<em>元/{{$value.time}}小时</em></b>
+			                    {{if $value.oldPrice}}
+	                                <b class="oldpic">原价 <em>{{$value.oldPrice}}</em></b>
+			                    {{/if}}
+		                    </i>
+                        </span>
+				        <span class="spf">已售<i>{{$value.sold}}</i></span>
+			        </div>
 
-			<div class="ctop ctopH" style="height: 200px;">
-				<img class="pic" src="http://img.daoway.cn/img/2016/12/28/5cf8680f-0264-4686-ba05-145700db6063_thumb.jpg" width="150" height="150">
-				<span class="spm spm2">
-                    <i>家庭保洁</i>
-                    <i style="color: #929292">家庭保洁服务，2小时起订。 阿姨上门不带保洁工具，需用户自备...</i>
-                    <i class="price"><b style="margin-left: 0">35<em>元/小时</em></b>
-
-                        <b class="oldpic" style="display: inline-block; margin-left: 20px">原价<em>50</em></b>
-
-                    </i>
-                </span>
-				<span class="spf">已售<i>37281</i></span>
-			</div>
-
+		        </div>
+		        {{/each}}
+			</script>
 		</div>
+
+
 		<div id="intro2" class="fenye" style="display: block; background: #f8f8f8; height: 70px">
 
 		</div>
 		<h3>
 			<span class="paihang"><i class="activity">商家简介</i></span>
 		</h3>
+		<div id="sDiscribe">
+			<script id="discribe" type="text/html">
+				<div class="company">{{info.company}}
+					{{if info.verify}}
+					<img src="img/renzheng.jpg">
+					{{/if}}
+				</div>
 
-		<div class="company">上海家谐网络科技有限公司<img src="img/renzheng.jpg"></div>
+				<p id="prfile" class="profile">{{info.discribe}}</p>
 
-		<p id="profile" class="profile" innertext="云家政是家政服务在线预订平台。我们的目标是让每个家庭都能获得诚信、便捷、有保障的家政服务。云家政拥有国内最大的实名认证家庭服务员数据库，目前平台上有超过100000名专业服务人员；数百个家政服务商，遍布全国主要城市各个社区。
-云家政倡导简单、轻松的生活方式。通过把分散的家政服务能力汇集和分配，让中国家庭获得诚信、便捷、有保障的家政服务，解决日常生活中的麻烦事，把更多时间留给自己和家人，提高生活品质。">云家政是家政服务在线预订平台。我们的目标是让每个家庭都能获得诚信、便捷、有保障的家政服务。云家政拥有国内最大的实名认证家庭服务员数据库，目前平台上有超过100000名专业服务人员；数百个家政服务商，遍布全国主要城市各个社区。<br>云家政倡导简单、轻松的生活方式。通过把分散的家政服务能力汇集和分配，让中国家庭获得诚信、便捷、有保障的家政服务，解决日常生活中的麻烦事，把更多时间留给自己和家人，提高生活品质。</p>
+			</script>
+		</div>
+
+
+
 		<div style="width: 100%; border-top: 10px solid #f8f8f8"></div>
-		<h3>
-			<span class="paihang">
-				<i class="activity">用户评论</i>
-				<em>(7797条评论)</em>
-			</span>
-		</h3>
-		<div id="commentDiv">
 
-			<div class="conmentss">
-				<img class="touxiang" src="img/fuwushangimg.png" width="40" height="40">
-				<ul>
-					<li>u18101212681</li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0">
-	                        <span class="noColor" style="left: 0">
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
+		<div id="commentList">
+			<script id="comment" type="text/html">
+				<h3>
+				<span class="paihang">
+					<i class="activity">用户评论</i>
+					<em>({{comments.length}}条评论)</em>
+				</span>
+				</h3>
+				<div id="commentDiv">
+					{{each comments}}
+					<div class="conmentss">
+						<img class="touxiang" src="{{$value.avatar}}" width="40" height="40">
+						<ul>
+							<li>{{$value.username}}</li>
+							<li>
+                        <span id="star">
+	                        <span class="noColor">
+		                        {{each $value.rates}}
+                                      <img src="img/{{$value}}_star.png" width="10px" height="auto">
+		                        {{/each}}
                             </span>
                         </span>
-						<em>2017-08-01</em>
-					</li>
-					<li class="commentdetail">态度热情，打扫的很干净</li>
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">北京  海淀区</li>
-
-				</ul>
-			</div>
-
-			<div class="conmentss">
-				<img class="touxiang" src="img/fuwushangimg.png" width="40" height="40">
-				<ul>
-					<li>VUker</li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                <img src="img/gray_star.png" width="10px" height="auto">
-
-                                <img src="img/gray_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-28</em>
-					</li>
-					<li class="commentdetail">准时到达，态度很好，就是干活儿效率太低，需要提高擦污垢的力度，两居室不是太脏一般两个小时足够了，因为很多地方不到位，又加了一小时，好在态度还不错</li>
-					<li class="commentimg">
-
-					</li>
-
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">北京  昌平区</li>
-
-				</ul>
-			</div>
-
-			<div class="conmentss">
-				<img class="touxiang" src="img/fuwushangimg.png" width="40" height="40">
-				<ul>
-					<li>u55646766</li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-08-05</em>
-					</li>
-					<li class="commentdetail">非常负责任，打扫很干净
-					</li>
-					<li class="commentimg">
-
-					</li>
-
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">南京  建邺区</li>
-
-				</ul>
-			</div>
-
-			<div class="conmentss">
-				<img class="touxiang" src="http://wx.qlogo.cn/mmopen/PiajxSqBRaELX9ejLj9nYI7vEic1iat3DgFNTJArEJfTEKbxeZzGVs1RdNVWd14bchRiaNhKy6bYBuPraR5ISMrScg/0" width="40" height="40">
-				<ul>
-					<li>Martin🇨🇳马腾</li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                <img src="img/gray_star.png" width="10px" height="auto">
-
-                                <img src="img/gray_star.png" width="10px" height="auto">
-
-                                <img src="img/gray_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-08-04</em>
-					</li>
-					<li class="commentdetail">都是外包给别人做的
-						两个小时的钱 做了1个小时多一点就走了
-						态度挺好的大妈
-						可是细心程度也就马马虎虎吧
-						没有统一制服 亲们也不觉得有什么统一培训 差评。</li>
-					<li class="commentimg">
-
-					</li>
-
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">上海  浦东新区</li>
-
-				</ul>
-			</div>
-
-			<div class="conmentss">
-				<img class="touxiang" src="http://wx.qlogo.cn/mmopen/ajNVdqHZLLCYfmeCKV1r8MfibSrLJbegcXCILwxJWo6q6WwbQx8ticQWQiaTktDegsI17lWcpsJRPebZIdA3PT4yQ/0" width="40" height="40">
-				<ul>
-					<li>童音月 </li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-07-25</em>
-					</li>
-					<li class="commentdetail">准时到达</li>
-					<li class="commentimg">
-
-					</li>
-
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">北京  朝阳区</li>
-
-				</ul>
-			</div>
-
-			<div class="conmentss">
-				<img class="touxiang" src="img/fuwushangimg.png" width="40" height="40">
-				<ul>
-					<li>user553137</li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-08-09</em>
-					</li>
-					<li class="commentdetail">准时到达，服务专业，态度热情，阿姨干活特别细 家里清洁也干净 之前阳台一直又脏又乱 阿姨全擦干净整理好 我和老公看书 阿姨专门放轻动作不打扰我们 干完活还有半个小时 阿姨洗了好几遍手 才给我们叠衣服 特别不好意思 希望下次还是这个阿姨～</li>
-					<li class="commentimg">
-
-					</li>
-
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">北京  海淀区</li>
-
-				</ul>
-			</div>
-
-			<div class="conmentss">
-				<img class="touxiang" src="img/fuwushangimg.png" width="40" height="40">
-				<ul>
-					<li>u13681230299</li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                <img src="img/gray_star.png" width="10px" height="auto">
-
-                                <img src="img/gray_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-08-09</em>
-					</li>
-					<li class="commentdetail">卫生做的不到位，找过几个小时工，这个最差
-					</li>
-					<li class="commentimg">
-
-					</li>
-
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">北京  朝阳区</li>
-
-				</ul>
-			</div>
-
-			<div class="conmentss">
-				<img class="touxiang" src="http://wx.qlogo.cn/mmopen/8wzmqSTCQD0DZHdbVXd1NqCslj8ceiaVP5SNxqicNVsGYibKU8lTWnlXDdt6cFftWyVvDV2WR4ZdNmVFd8tnzASX8pBfU06eX7f/0" width="40" height="40">
-				<ul>
-					<li>小仙女🕸1</li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-08-08</em>
-					</li>
-					<li class="commentdetail">服务专业</li>
-					<li class="commentimg">
-
-					</li>
-
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">杭州  萧山区</li>
-
-				</ul>
-			</div>
-
-			<div class="conmentss">
-				<img class="touxiang" src="img/fuwushangimg.png" width="40" height="40">
-				<ul>
-					<li>Jennifer川川</li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-08-08</em>
-					</li>
-					<li class="commentdetail">一般</li>
-					<li class="commentimg">
-
-					</li>
-
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">成都  成华区</li>
-
-				</ul>
-			</div>
-
-			<div class="conmentss">
-				<img class="touxiang" src="http://wx.qlogo.cn/mmopen/Q5xPxqRgZicXHJFFA0cvdyY2qo3eib9jnNoPoyIVUO4uZ93YAGKiaNvC1sPU6BZcy4Mj7QPxBJvaLCE1BfuhgyhlcFnGWAg4DNl/0" width="40" height="40">
-				<ul>
-					<li>沙漠王子</li>
-					<li>
-                        <span id="star" style="width: 70px; margin-left: 0"><span class="noColor" style="left: 0">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                                      <img src="img/red_star.png" width="10px" height="auto">
-
-                            </span></span><em style="margin-left: 10px">2017-08-08</em>
-					</li>
-					<li class="commentdetail">准时到达，服务专业，态度热情，很实在 麻利
-					</li>
-					<li class="commentimg">
-
-					</li>
-
-					<li class="commentposition"><img src="img/position.jpg" width="9" height="11">南京  鼓楼区</li>
-
-				</ul>
-			</div>
-
+								<em>{{$value.date}}</em>
+							</li>
+							<li class="commentdetail">{{$value.comment}}</li>
+							<li class="commentposition"><img src="img/position.jpg" width="9" height="11">{{$value.location}}</li>
+
+						</ul>
+					</div>
+					{{/each}}
+				</div>
+				<div class="fenye2">
+					<a href="#profile" class="pageup greycolor">&lt;上一页</a>
+					<div id="showPage" style="display: inline-block">
+
+						<a href="#profile" class="num acv">1</a>
+
+					</div>
+					<a href="#profile" class="pagedown ">下一页&gt;</a>
+				</div>
+
+			</script>
 		</div>
-		<div class="fenye2">
-			<a href="#profile" class="pageup greycolor">&lt;上一页</a>
-			<div id="showPage" style="display: inline-block">
-				<a href="#profile" class="num acv">1</a>
-
-				<a href="#profile" class="num">2</a>
-
-				<a href="#profile" class="num">3</a>
-
-				<a href="#profile" class="num">4</a>
-
-				<a href="#profile" class="num">5</a>
-
-				<a href="#profile" class="num">6</a>
-
-				<a href="#profile" class="num">7</a>
-
-				<a href="#profile" class="num">8</a>
-
-				<a href="#profile" class="num">9</a>
-
-				<a href="#profile" class="num">10</a>
-
-				...
-
-			</div>
-			<a href="#profile" class="pagedown ">下一页&gt;</a>
-		</div>
-
 	</div>
 	<div class="centerright">
 		<div class="rightct" style="border: none;">
-			<div class="erweima erweima2"><i id="qrcode"><canvas width="115" height="115"></canvas></i></div>
+			<div class="erweima erweima2"><i id="qrcode"></i></div>
 			<div class="erweima erweima3"><img src="img/daowayApp.png" width="130" height="auto"></div>
 		</div>
 	</div>
@@ -580,8 +311,10 @@
 </div>
 <script type="text/javascript" src="js/template-web.js"></script>
 <script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/qrcode.js"></script>
 <script type="text/javascript">
 	$(function () {
+		// 定义获取url中请求参数的方法
 		function GetQueryString(name) {
 			var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
 			var r = window.location.search.substr(1).match(reg);
@@ -590,12 +323,85 @@
 		}
 		// 获取服务商的ID
 		let serviceID = GetQueryString('serviceId');
+
+		// 发送请求获取数据
 		$.get('/service', function (res) {
 			if (res.code === 0) {
 			    var service = res.data
-				console.log(service);
+//				console.log(service);
 			}
-		})
+			// 获取三部分数据
+			var fuwushang = service.fuwushang.filter(function (value,index) {
+				return value.serviceId == serviceID;
+			});
+
+			var fuwuItem = service.service.filter(function (value,index) {
+				return value.serviceId == serviceID
+			})
+			var fuwu = {fuwuItem}
+			// console.log(fuwuItem)
+			var comments = service.comments.filter(function (value, index) {
+				return value.serviceId == serviceID;
+			});
+			var comm = {comments}
+
+
+			// 标题部分的模板渲染
+			var titleCenter = template('titlecenter', fuwushang[0]);
+			$('#title').append(titleCenter);
+
+			var fuwuList = template('serviceItem', fuwu);
+			$('#serviceList').append(fuwuList);
+
+
+			// 渲染公司描述
+			var discribe = template('discribe', fuwushang[0]);
+			$('#sDiscribe').append(discribe);
+
+			// 渲染评论列表
+			var comments = template('comment', comm);
+			$('#commentList').append(comments);
+
+
+			// 点击定位到具体的项目
+			$('.navi li').click(function () {
+				var pHeight = $('#prfile').outerHeight(true)*1;
+				// 获取列表数量
+				var i = fuwuItem.length;
+				// 三个项目分别滚动不同的高度
+				if ($(this).index()=== 0) {
+					$('body').scrollTop(212);
+				}else if ($(this).index()=== 1) {
+					$('body').scrollTop(342+200*i);
+				}else if ($(this).index()=== 2) {
+					$('body').scrollTop(462+200*i+pHeight);
+				}
+			});
+
+			// 给每一服务绑定点击事件
+			$('.ctop').click(function () {
+				console.log(this.id)
+				window.location.href = "/detail.html?detailId="+this.id;
+			})
+
+			var qrcode = new QRCode('qrcode', {
+				text: 'http://localhost:3000/fuwushang.html?serviceId='+serviceID,
+				width: 115,
+				height: 115,
+				colorDark : '#000000',
+				colorLight : '#ffffff',
+				correctLevel : QRCode.CorrectLevel.H
+			});
+
+
+		});
+		// 用事件委托的方式 绑定单击事件
+		$('.navi').delegate('li', 'click', function () {
+			$('.navi li').removeClass('slibingsclor');
+			$(this).addClass('slibingsclor');
+		});
+
+
 	});
 </script>
 </body>

@@ -67,34 +67,30 @@
 	</div>
 </header>
 
-<div class="classify">
-	<div class="classify-left">所有分类
-		<i class="bright">&gt;</i>
-		<i class="cnav">家庭保洁</i>
-		<i class="bright">&gt;</i>
-	</div>
-</div>
-
-<div class="navcenter">
-	<div class="list1"><span class="first">分类</span>
-		<div class="clearfix">
-			<span id="all" class="clickAble ">全部</span>
-
-			<span id="小时工" class="clickAble on">小时工</span>
-
-			<span id="开荒保洁" class="clickAble ">开荒保洁</span>
-
-			<span id="擦玻璃" class="clickAble ">擦玻璃</span>
-
-			<span id="深度保洁" class="clickAble ">深度保洁</span>
-
-			<span id="家居养护" class="clickAble ">家居养护</span>
-
-			<span id="杀虫除螨" class="clickAble ">杀虫除螨</span>
-
+<div id="navBar">
+	<script id="classify" type="text/html">
+		<div class="classify">
+			<div class="classify-left">所有分类
+				<i class="bright">&gt;</i>
+				<i class="cnav">{{name}}</i>
+				<i class="bright">&gt;</i>
+			</div>
 		</div>
-	</div>
+		<div class="navcenter">
+			<div class="list1"><span class="first">分类</span>
+				<div class="clearfix">
+					<span id="all" class="clickAble on">全部</span>
+					{{each subCategory}}
+					<span id="{{$value.CName}}" class="clickAble ">{{$value.subName}}</span>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	</script>
 </div>
+
+
+
 
 <div class="container classify-list">
 	<div class="row">
@@ -108,455 +104,53 @@
 					<li>价格低</li>
 				</ul>
 				<div class="select-page-ctr">
-					<span>1</span><span>/5</span>
+					<span>1</span><span>/1</span>
 					<span class="prv-page greycolor">上一页</span>
 					<span class="next-page">下一页</span>
 				</div>
 			</div>
-			<div class="boxtab xianshi">
+			<div class="boxtab xianshi" id="sevList">
+				<script id="sevItem" type="text/html">
+					{{each service}}
 
-				<div detailid="56611" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/12/28/5cf8680f-0264-4686-ba05-145700db6063_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>家庭保洁</i>
-					<i>家庭保洁服务，2小时起订。阿姨上门不带保洁工具，需用户自备2小时起订。阿姨上门不带保洁工具，需用户自备...</i>
-                    <i>
-	                    <b>35<em>元/小时</em></b>
-	                    <b class="oldpic" style="display: inline-block"><em>50元</em></b>
-                    </i>
-                    <i class="navtxt">
-	                    <b><img src="img/home1.png">云家政</b>
-	                    <b>已售<em>37255</em></b><b>好评<em>86%</em></b>
-                    </i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>2小时</i>
-                </span>
-				</div>
-
-				<div detailid="2429946" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2017/03/22/41491c6c-afd7-449e-9037-e2bf6d72d430_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>室内保洁</i>
-                     <i style="color: #929292">服务内容：
-1.室内保洁服务，2小时起订，阿姨携带清洁装备，...</i>
-                    <i><b style="margin-left: 0">30<em>元/小时</em></b><b class="oldpic" style="display: inline-block"><em>50元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">三鼎家政</b><b>已售<em>31967</em></b><b>好评<em>84%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>4小时</i>
-                </span>
-				</div>
-
-				<div detailid="2477132" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/price/2017/05/10/32b6bae4-14ad-4afa-8375-3238c61b30f2_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>4小时家庭保洁</i>
-                     <i style="color: #929292">服务特点:
-1、采用区域分类式的专业工具
-2、外国进口环保的...</i>
-                    <i><b style="margin-left: 0">99<em>元/4小时</em></b><b class="oldpic" style="display: inline-block"><em>196元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">美居管家</b><b>已售<em>24</em></b><b>好评<em>100%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>2小时</i>
-                </span>
-				</div>
-
-				<div detailid="2429947" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/12/13/8c3823a3-922c-4d4e-a239-40ccbfd3fc46_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>4小时室内保洁（可擦玻璃）</i>
-                     <i style="color: #929292">服务内容：
-1.保洁或擦玻璃，自由搭配但不同时进行，共4小时...</i>
-                    <i><b style="margin-left: 0">159<em>元/4小时</em></b><b class="oldpic" style="display: inline-block"><em>300元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">三鼎家政</b><b>已售<em>1885</em></b><b>好评<em>84%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>4小时</i>
-                </span>
-				</div>
-
-				<div detailid="2437305" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/09/20/bcfca04b-3aef-45ae-b704-ab6f44831fca_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>日常清洁2小时</i>
-                     <i style="color: #929292">服务内容：
-日常清洁，2小时服务，阿姨携带工具上门
-
-服务保...</i>
-                    <i><b style="margin-left: 0">70<em>元/2小时</em></b><b class="oldpic" style="display: none"><em>70元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">悦管家</b><b>已售<em>1261</em></b><b>好评<em>93%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>4小时</i>
-                </span>
-				</div>
-
-				<div detailid="2382622" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2017/03/22/83a8ce32-cb8e-4256-9059-377b9a7391b3_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>家庭保洁</i>
-                     <i style="color: #929292">服务内容：
-1.家庭保洁服务，2小时起订，服务商携带清洁装备...</i>
-                    <i><b style="margin-left: 0">35<em>元/小时</em></b><b class="oldpic" style="display: inline-block"><em>50元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">来人到家</b><b>已售<em>19804</em></b><b>好评<em>85%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>4小时</i>
-                </span>
-				</div>
-
-				<div detailid="2434265" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/08/29/b5a9f2b6-f7b5-4b58-a048-90fd635fbdd5_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>4次4小时保洁包月</i>
-                     <i style="color: #929292">服务内容：
-1.包含3次4小时保洁+1次4小时擦玻璃，或者4...</i>
-                    <i><b style="margin-left: 0">459<em>元/套</em></b><b class="oldpic" style="display: inline-block"><em>700元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">三鼎家政</b><b>已售<em>161</em></b><b>好评<em>84%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>4小时</i>
-                </span>
-				</div>
-
-				<div detailid="2350384" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/06/29/d6ebc1f0-6364-408c-b3fa-5a899e4eba7a_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>日常保洁  小时工</i>
-                     <i style="color: #929292">服务内容：
-日常保洁，2个小时起订，阿姨携带工具包括，毛巾，...</i>
-                    <i><b style="margin-left: 0">35<em>元/小时</em></b><b class="oldpic" style="display: inline-block"><em>50元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">中鼎家政</b><b>已售<em>817</em></b><b>好评<em>94%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>1小时</i>
-                </span>
-				</div>
-
-				<div detailid="2425727" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/06/29/9f1665ab-cbec-4814-835e-6cffd27d46ef_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>家庭保洁4小时</i>
-                     <i style="color: #929292">服务内容：
-4小时家庭保洁服务，阿姨上门携带清洁装备，包括刮...</i>
-                    <i><b style="margin-left: 0">99<em>元/4小时</em></b><b class="oldpic" style="display: inline-block"><em>200元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">鸿到家</b><b>已售<em>396</em></b><b>好评<em>94%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>48小时</i>
-                </span>
-				</div>
-
-				<div detailid="2395249" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/12/19/a71fcfd6-a2b3-43e2-82ea-c1ac4c6150f9_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>金牌保洁＋全屋清洁消毒杀菌</i>
-                     <i style="color: #929292">温馨提示：若需要女保洁员请在备注上标明，谢谢
-
-服务内容：
-...</i>
-                    <i><b style="margin-left: 0">149<em>元/3小时</em></b><b class="oldpic" style="display: inline-block"><em>389元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">叮当到家</b><b>已售<em>721</em></b><b>好评<em>91%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>3小时</i>
-                </span>
-				</div>
-
-				<div detailid="74219" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/price/2017/07/29/828b41bd-2b21-4127-880b-069ff6cdf0b9_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>常规家庭保洁(客户自备工具)</i>
-                     <i style="color: #929292">服务内容：
-家庭保洁服务，2小时起订（本项目需客户自备工具）...</i>
-                    <i><b style="margin-left: 0">30<em>元/小时</em></b><b class="oldpic" style="display: inline-block"><em>50元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">乐嘉家政</b><b>已售<em>1838</em></b><b>好评<em>81%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>1小时</i>
-                </span>
-				</div>
-
-				<div detailid="2429744" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/11/25/b54f2059-0c2e-49bc-bc12-d11dd132505f_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>家庭保洁3小时</i>
-                     <i style="color: #929292">温馨提示：若需要女保洁员请在备注上标明，谢谢
-服务内容：
-保...</i>
-                    <i><b style="margin-left: 0">119<em>元/3小时</em></b><b class="oldpic" style="display: inline-block"><em>269元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">叮当到家</b><b>已售<em>190</em></b><b>好评<em>91%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>3小时</i>
-                </span>
-				</div>
-
-				<div detailid="2476675" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/price/2017/08/02/33412049-9b99-42b4-92a7-4d2a3dc05522_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>保洁小时工</i>
-                     <i style="color: #929292">服务内容：
-家庭保洁服务，2小时起订。（如需带保洁工具请备注...</i>
-                    <i><b style="margin-left: 0">30<em>元/小时</em></b><b class="oldpic" style="display: inline-block"><em>50元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">金月时代</b><b>已售<em>100</em></b><b>好评<em>88%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>5小时</i>
-                </span>
-				</div>
-
-				<div detailid="2472731" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2017/04/01/f8f9e320-6584-4ddf-a5ce-208611170480_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>家庭保洁</i>
-                     <i style="color: #929292">服务内容：
-家庭保洁服务，2小时起订。（暂时不提供带保洁工具...</i>
-                    <i><b style="margin-left: 0">30<em>元/小时</em></b><b class="oldpic" style="display: none"><em>30元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">宝宝天天乐</b><b>已售<em>153</em></b><b>好评<em>94%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>2小时</i>
-                </span>
-				</div>
-
-				<div detailid="109943" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2017/04/01/d03c386a-0fd9-415e-82f7-24e164608f8f_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>3小时保洁(9~18点)</i>
-                     <i style="color: #929292">40分钟速达   不满意重做    服务有保障
-
-服务内...</i>
-                    <i><b style="margin-left: 0">150<em>元/3小时</em></b><b class="oldpic" style="display: inline-block"><em>175元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">家政圈</b><b>已售<em>6196</em></b><b>好评<em>86%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>1小时</i>
-                </span>
-				</div>
-
-				<div detailid="105548" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/12/13/d09da9b5-8d89-47a5-a8ce-5602ea3ce3ba_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>4小时保洁（可擦玻璃）</i>
-                     <i style="color: #929292">服务内容：
-1.保洁或擦玻璃，自由搭配但不同时进行，共4小时...</i>
-                    <i><b style="margin-left: 0">159<em>元/4小时</em></b><b class="oldpic" style="display: inline-block"><em>300元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">来人到家</b><b>已售<em>3412</em></b><b>好评<em>85%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>4小时</i>
-                </span>
-				</div>
-
-				<div detailid="2396767" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2017/04/01/620c75b2-7225-443a-916f-aba731394b42_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>室内保洁(10小时起可分拆)</i>
-                     <i style="color: #929292">40分钟速达   10小时起订  不满意重做    服务有保...</i>
-                    <i><b style="margin-left: 0">33<em>元/小时</em></b><b class="oldpic" style="display: inline-block"><em>50元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">家政圈</b><b>已售<em>775</em></b><b>好评<em>86%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>1小时</i>
-                </span>
-				</div>
-
-				<div detailid="2459670" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2017/02/06/2c26a789-b77c-4d67-a1df-fa0d4b9ab6e9_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>家庭保洁（家务师自备工具）</i>
-                     <i style="color: #929292">服务内容：
-1.如需阿姨携带工具请备注（拖把扫把不带）
-2....</i>
-                    <i><b style="margin-left: 0">35<em>元/小时</em></b><b class="oldpic" style="display: inline-block"><em>55元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">林一到家</b><b>已售<em>285</em></b><b>好评<em>86%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>2小时</i>
-                </span>
-				</div>
-
-				<div detailid="2476674" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/price/2017/08/02/ceb1d73a-2535-4570-a55a-22037266afe7_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>保洁烧饭钟点工</i>
-                     <i style="color: #929292">钟点工服务范围：
-提供打扫卫生、接送小孩、做家务、做饭、开荒...</i>
-                    <i><b style="margin-left: 0">30<em>元/小时</em></b><b class="oldpic" style="display: inline-block"><em>60元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">金月时代</b><b>已售<em>6</em></b><b>好评<em>88%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>5小时</i>
-                </span>
-				</div>
-
-				<div detailid="2405968" class="ctop" style="height: 200px">
-					<img class="pic" src="http://img.daoway.cn/img/2016/05/27/4cab2a95-d419-4c35-a77b-91cb6054bc1e_thumb.jpg" width="140" height="140">
-					<span class="spm spm2">
-                    <i>4小时（保洁+玻璃清洁）</i>
-                     <i style="color: #929292">40分钟速达  不满意重做    服务有保障
-
-服务内容...</i>
-                    <i><b style="margin-left: 0">269<em>元/套</em></b><b class="oldpic" style="display: inline-block"><em>299元</em></b></i>
-                    <i class="navtxt"><b><img src="img/home1.png" width="18" height="17">家政圈</b><b>已售<em>343</em></b><b>好评<em>86%</em></b></i>
-                </span>
-					<span class="spf quickly">
-                    <i>最快上门</i>
-                    <i>1小时</i>
-                </span>
-				</div>
+					<div id="{{$value.detailId}}" class="ctop" style="height: 200px">
+						<img class="pic" src="{{$value.img}}" width="140" height="140">
+						<span class="spm spm2">
+	                    <i>{{$value.title}}</i>
+						<i>{{$value.serveDisc}}</i>
+	                    <i>
+		                    <b>{{$value.price}}<em>元/{{$value.time}}小时</em></b>
+		                    <b class="oldpic" style="display: inline-block"><em>{{$value.oldPrice}}元</em></b>
+	                    </i>
+	                    <i class="navtxt">
+		                    <b><img src="img/home1.png">{{$value.serviceName}}</b>
+		                    <b>已售<em>{{$value.sold}}</em></b><b>好评<em>{{$value.rate}}%</em></b>
+	                    </i>
+                    </span>
+						<span class="spf quickly">
+	                    <i>最快上门</i>
+	                    <i>{{$value.arriveTime}}小时</i>
+                    </span>
+					</div>
+					{{/each}}
+				</script>
 
 			</div>
 		</div>
 		<div class="col-md-3 fuwu-right">
 			<div class="centerright">
-				<div class="rightct">
-					<h3>服务商</h3>
+				<div id="fuwus" class="rightct">
 
-					<div id="c8e42f7716124bd2ad23c95445002d88" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/12/28/5cf8680f-0264-4686-ba05-145700db6063_thumb.jpg" width="70" height="70">
-						<p >云家政</p>
-						<p class="pline"><em>已成功接单<b>29052</b></em><em>好评<b>86%</b></em></p>
-					</div>
-
-					<div id="fba4e31f6c07416baef89bcbfbf5c910" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/08/24/94117c68-1048-473b-8370-dc40ab66c3e0_thumb.jpg" width="70" height="70">
-						<p >三鼎家政</p>
-						<p class="pline">
-							<em>已成功接单<b>15571</b></em>
-							<em>好评<b>85%</b></em>
-						</p>
-					</div>
-
-					<div id="075cbb77e906416eaf21e3a232d91088" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/09/20/31043989-f708-4be6-8990-e85fd903fd0f_thumb.jpg" width="70" height="70">
-						<p >悦管家</p>
-						<p class="pline"><em>已成功接单<b>1907</b></em><em>好评<b>93%</b></em></p>
-					</div>
-
-					<div id="c3e8e5cf969441b29c602c1ebdddfcd6" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/10/18/4a6382d0-0a5a-4365-b17f-595b376109a2_thumb.jpg" width="70" height="70">
-						<p >家政圈</p>
-						<p class="pline"><em>已成功接单<b>4283</b></em><em>好评<b>86%</b></em></p>
-					</div>
-
-					<div id="ab65512d16b745f1b420c915cbd399f2" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2017/02/12/02079ba0-04f0-464d-a5b4-5806402337e9_thumb.jpg" width="70" height="70">
-						<p >来人到家</p>
-						<p class="pline"><em>已成功接单<b>15247</b></em><em>好评<b>85%</b></em></p>
-					</div>
-
-					<div id="8616542175644a689ac470075138a203" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/09/20/314afa69-1924-465b-89a2-cb65302dea68_thumb.jpg" width="70" height="70">
-						<p >洁道夫</p>
-						<p class="pline"><em>已成功接单<b>1073</b></em><em>好评<b>91%</b></em></p>
-					</div>
-
-					<div id="5a4c37f62c1748cf8f4b7e1ad98c74fc" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/06/29/b1696558-fd8c-4240-a6aa-3f649eb1c799_thumb.jpg" width="70" height="70">
-						<p >鸿到家</p>
-						<p class="pline"><em>已成功接单<b>490</b></em><em>好评<b>94%</b></em></p>
-					</div>
-
-					<div id="b96ea0b6e2f74fccbb8c7da658dacad0" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/12/14/87291e1a-d281-42b4-a57b-a765198db128_thumb.jpg" width="70" height="70">
-						<p >一刻钟生活服务</p>
-						<p class="pline"><em>已成功接单<b>426</b></em><em>好评<b>92%</b></em></p>
-					</div>
-
-					<div id="ff3aa7db63514925a8b267358b453354" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/04/23/72279dd6-56e1-4b94-81d3-13d6d0924760_thumb.jpg" width="70" height="70">
-						<p >叮当到家</p>
-						<p class="pline"><em>已成功接单<b>924</b></em><em>好评<b>91%</b></em></p>
-					</div>
-
-					<div id="75336b5854a448c0956ab3cdb0be5d28" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2017/05/10/5bfbc82e-27d3-49a9-8090-363727eab11b_thumb.jpg" width="70" height="70">
-						<p >美居管家</p>
-						<p class="pline"><em>已成功接单<b>45</b></em><em>好评<b>100%</b></em></p>
-					</div>
-
-					<div id="3e81058660ff442b9d2aa980cd4c64d3" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/06/29/d81d1eb2-ce48-470e-a480-ce23f0324e62_thumb.jpg" width="70" height="70">
-						<p >中鼎家政</p>
-						<p class="pline"><em>已成功接单<b>347</b></em><em>好评<b>94%</b></em></p>
-					</div>
-
-					<div id="e5e4065d3bcc446f84f04066207989a3" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/11/24/bcd2ce13-81b8-40fd-877e-b2b2ddee16d4_thumb.jpg" width="70" height="70">
-						<p >乐嘉家政</p>
-						<p class="pline"><em>已成功接单<b>1002</b></em><em>好评<b>81%</b></em></p>
-					</div>
-
-					<div id="212481a5ca8943c6bf4ac9bce5e158fc" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/06/21/9dd95303-a992-44eb-a32b-69e55ea01a50_thumb.jpg" width="70" height="70">
-						<p >如意管家</p>
-						<p class="pline"><em>已成功接单<b>236</b></em><em>好评<b>89%</b></em></p>
-					</div>
-
-					<div id="76ae79321a3344c4afd5e92ef168be48" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2017/04/01/74787fd4-f3a0-411b-857d-2b3f0198fa92_thumb.jpg" width="70" height="70">
-						<p >宝宝天天乐</p>
-						<p class="pline"><em>已成功接单<b>86</b></em><em>好评<b>94%</b></em></p>
-					</div>
-
-					<div id="1396167d25694952a788f7182ec06d7c" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/10/27/bd431f10-b8d8-4936-acb7-950e9f7a0ed3_thumb.jpg" width="70" height="70">
-						<p >超级阿姨</p>
-						<p class="pline"><em>已成功接单<b>1042</b></em><em>好评<b>86%</b></em></p>
-					</div>
-
-					<div id="2bc1b41dbe2b4e9eb4ad7c24e3192621" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2017/08/02/937e0439-3fd0-40e8-912c-298404d64260_thumb.jpg" width="70" height="70">
-						<p >金月时代</p>
-						<p class="pline"><em>已成功接单<b>46</b></em><em>好评<b>88%</b></em></p>
-					</div>
-
-					<div id="f1cafac36ee14dadbafe53227900f932" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/06/27/5c06de45-7731-492e-a041-e3d5908c5da2_thumb.jpg" width="70" height="70">
-						<p >韩管家</p>
-						<p class="pline"><em>已成功接单<b>70</b></em><em>好评<b>96%</b></em></p>
-					</div>
-
-					<div id="d232eff9fbae43f6ad34fdd60f60e2c5" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2017/08/02/d42aefa4-dbf0-4b9b-87b4-5da5e39bdbe6_thumb.jpg" width="70" height="70">
-						<p >我擦保洁</p>
-						<p class="pline"><em>已成功接单<b>233</b></em><em>好评<b>85%</b></em></p>
-					</div>
-
-					<div id="99842ef6572149c8bcccc4dc0f7b6334" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2017/02/06/e6c0e24a-91cc-471c-9b6e-c91ab25b3d6a_thumb.jpg" width="70" height="70">
-						<p >林一到家</p>
-						<p class="pline"><em>已成功接单<b>142</b></em><em>好评<b>86%</b></em></p>
-					</div>
-
-					<div id="cf634124049f480f84c7a5ce7a419e46" class="fuwishang">
-						<img src="http://img.daoway.cn/img/2016/09/08/ed4a5863-90e8-4376-a794-30e7f43ac3f5_thumb.jpg" width="70" height="70">
-						<p >水动力除螨</p>
-						<p class="pline"><em>已成功接单<b>43</b></em><em>好评<b>100%</b></em></p>
-					</div>
+					<script id="fuwushang" type="text/html">
+						<h3>服务商</h3>
+						{{each fuwushang}}
+						<div id="{{$value.serviceId}}" class="fuwishang">
+							<img src="{{$value.info.img}}" width="70" height="70">
+							<p >{{$value.name}}</p>
+							<p class="pline"><em>已成功接单<b>{{$value.info.bill}}</b></em><em>好评<b>{{$value.info.goodratings}}%</b></em></p>
+						</div>
+						{{/each}}
+					</script>
 
 				</div>
 			</div>
@@ -569,13 +163,6 @@
 
 		<a class="num fy-active">1</a>
 
-		<a class="num ">2</a>
-
-		<a class="num ">3</a>
-
-		<a class="num ">4</a>
-
-		<a class="num ">5</a>
 
 	</div>
 	<a class="pagedown ">下一页&gt;</a>
@@ -693,5 +280,55 @@
 		<p>©2015 版权所有  到位 daoway.com 京ICP备15001471号-1 北京邻家科技有限公司</p>
 	</div>
 </div>
+<script type="text/javascript" src="js/template-web.js"></script>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript">
+    $(function () {
+	    function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if(r!=null)return  unescape(r[2]);
+		    return null;
+	    }
+	    // 获取分类的ID
+	    let categoryNo = GetQueryString('category');
+	    $.get('/service', function (res) {
+		    if (res.code == 0) {
+		        var services = res.data;
+		    }
+		    var category = services.category.filter((value, index) => {
+		        return value.category == categoryNo;
+		    });
+		    // console.log(category)
+
+		    var fuwushang = services.fuwushang;
+		    var fws = {fuwushang};
+
+		    var service = services.service.filter((value,index) => {
+		        return value.category == categoryNo;
+		    });
+		    var serv = {service};
+
+		    // 导航部分模板
+			var classify = template('classify', category[0]);
+			$('#navBar').append(classify);
+
+		    // 左侧列表项目模板
+			var sevItem = template('sevItem', serv);
+			$('#sevList').append(sevItem);
+
+			// 右侧服务商列表模板
+		    var fuwushang = template('fuwushang', fws);
+		    $('#fuwus').append(fuwushang);
+
+
+		    $('#sevList').delegate('div', 'click', function () {
+			    //console.log(this.id)
+			    window.location.href = '/detail.html?detailId='+this.id;
+		    })
+
+	    })
+    });
+</script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
 	<meta charset="UTF-8">
 	<meta name="baidu-site-verification" content="7uCVhIaDKW">
@@ -68,80 +68,81 @@
 </header>
 
 <div class="classify">
-	<div class="classify-left">所有分类
-		<i class="bright">&gt;</i>
-		<i>家庭保洁</i>
-		<i class="bright">&gt;</i>
-		<i class="cnav">日常清洁</i>
-	</div>
+	<script id="fenlei" type="text/html">
+		<div class="classify-left">所有分类
+			<i class="bright">&gt;</i>
+			<i>{{name}}</i>
+			<i class="bright">&gt;</i>
+			<i class="cnav">{{CNtag}}</i>
+		</div>
+	</script>
 </div>
 
 <div class="container classify-list detial">
 	<div class="row">
-		<div class="col-md-9  fuwu-left">
-			<div id="curauto" class="dtop">
-				<img class="pic" src="http://img.daoway.cn/img/2016/09/20/185178d3-453e-4ca3-b118-977a589430e9.jpg" width="160" height="160">
-				<span class="spm">
-	                <i>日常清洁3小时</i>
-	                <i>价格<b>105<em>元/3小时</em></b><b class="oldpic" style="display: none">原价<em>105元</em></b></i>
-	                <i>优惠<em class="youhui">无</em></i>
-	                <i>已售<em class="yishou">359</em></i>
+		<!--服务详情-->
+		<div id="serviceItem">
+
+			<script id="serviceDetail" type="text/html">
+				<div class="col-md-9  fuwu-left">
+					<div id="curauto" class="dtop">
+						<img class="pic" src="{{img}}" width="160" height="160">
+						<span class="spm">
+	                <i>{{title}}</i>
+	                <i>价格<b>{{price}}<em>元/{{time}}小时</em></b>
+		                {{if oldPrice}}
+		                <b class="oldpic">原价<em>{{oldPrice}}元</em></b>
+		                {{/if}}
+	                </i>
+							{{if discount.length}}
+	                            <i>优惠<em class="youhui">{{discount[0]}}</em></i>
+							{{/if}}
+	                <i>已售<em class="yishou">{{sold}}</em></i>
                 </span>
-				<span class="spf">
-	                <i id="qrcode"><img src="./img/qr.png" alt=""></canvas></i>
+						<span class="spf">
+	                <i id="qrcode">
+		                <!--<img src="./img/qr.png" alt="">-->
+	                </i>
 	                <b>扫一扫</b><b>立即预约</b>
                 </span>
-			</div>
-			<div class="cdown">
-				<b>服务描述</b>
-				<p id="servicePriceDescription" innertext="服务内容：
-					日常清洁服务，3小时服务，携带工具上门
-
-					服务保障：
-					1.根据满意度提交评价；
-					2.清洁内容丰富；
-					3.价格透明不现场议价；
-					4.服务标准化，品质可预见；
-					5.发现怠工，随即停止服务，不收取任何费用；
-					6.出现服务质量问题，免费返工。
-						离开时带走垃圾">
-				服务内容：<br>日常清洁服务，3小时服务，携带工具上门<br><br>服务保障：<br>1.根据满意度提交评价；<br>2.清洁内容丰富；<br>3.价格透明不现场议价；<br>4.服务标准化，品质可预见；<br>5.发现怠工，随即停止服务，不收取任何费用；<br>6.出现服务质量问题，免费返工。<br><br>服务范围：<br>室内及阳台地面、厨房及卫生间地面（限瓷砖面）、五金件、水池及面盆、房门、家电及家具表面、洗漱台、浴房（浴缸）及马桶、表面物品整理<br><br>不包含范围：<br>外墙玻璃的清洁、公共区域、办公场所、商铺、宿舍、群租房、新居开荒及大扫除<br><br>服务标准：<br>卫生间无明显污渍，洁具洁净光亮，五金件洁净光亮，无水渍、无异味<br>厨房无明显污渍、油渍，五金件洁净光亮，无水渍、无异味<br>室内地面洁净，家具表面无尘土、无水迹<br>马桶、地漏、门把手及开关消毒<br>离开时带走垃圾</p>
-				<b>服务范围</b>
-				<p>北京 上海</p>
-				<b>服务时间</b>
-				<p>09:00-18:00<i>最近可预约时间:<em>08月09日 17:00</em></i></p>
-				<b>订购须知</b>
-				<p id="orderingNotice" style="background: #fffcf1" innertext="1.商家将在您下单后30分钟内确认是否接单；
-					2.订单确认后，修改订单或退款需提前2小时通知；
-					3.预约时间前2小时内退单将按30元/人扣取空单费；
-					4.如商家接单后爽约将全额退款并向您额外赔付30元；
-					5.为保障您的权益，所有费用请通过到位平台支付；
-					6.18点之前预约次日11点之后的服务,。">1.商家将在您下单后30分钟内确认是否接单；<br>2.订单确认后，修改订单或退款需提前2小时通知；<br>3.预约时间前2小时内退单将按30元/人扣取空单费；<br>4.如商家接单后爽约将全额退款并向您额外赔付30元；<br>5.为保障您的权益，所有费用请通过到位平台支付；<br>6.18点之前预约次日11点之后的服务,。</p>
-				<b>商家简介</b>
-				<p id="serviceDescription" innertext="悦管家是一家垂直管理的O2O家庭服务平台，自2014年起坚持垂直管理的模式，把控服务人员的服务质量，将所有培训和品牌落实到每一个服务人员。
-	                服务特点有：
-					1.自带工具上门服务
-					2、服务人员全保险，无免赔额
-					3、服务人员属于平台垂直管理。
-					为客户带去最安全优质的服务。">悦管家是一家垂直管理的O2O家庭服务平台，自2014年起坚持垂直管理的模式，把控服务人员的服务质量，将所有培训和品牌落实到每一个服务人员。<br> 服务特点有：<br>1.自带工具上门服务<br>2、服务人员全保险，无免赔额<br>3、服务人员属于平台垂直管理。 <br>为客户带去最安全优质的服务。</p>
-			</div>
+					</div>
+					<div class="cdown">
+						<b>服务描述</b>
+						<p id="servicePriceDescription">
+							服务内容：{{serveDisc}}</p>
+						<b>服务范围</b>
+						<p>{{serveArea}}</p>
+						<b>服务时间</b>
+						<p>{{servetime}}<i>最近可预约时间:<em>{{subscribeDate}} {{subscribeTime}}</em></i></p>
+						<b>订购须知</b>
+						<p id="orderingNotice" style="background: #fffcf1">
+							{{each needToKnow}}
+							{{$value}}</br>
+							{{/each}}
+						</p>
+						<b>商家简介</b>
+						<p id="serviceDescription">{{}}</p>
+					</div>
+				</div>
+			</script>
 		</div>
+
 		<div class="col-md-3 fuwu-right">
 			<div class="centerright">
 				<div class="rightct">
-
-					<div class="fuwu-qr">
-						<h3>服务商</h3>
-						<img src="http://img.daoway.cn/img/2016/09/20/95c33eca-9cae-419e-abc3-78bc44584615.jpg">
-						<p>悦管家</p>
-						<p>成功接单<i>1907</i></p>
-						<p>成功接单<i>1907</i></p>
-						<p>成功接单<i>1907</i></p>
-					</div>
-					<div class="erweima">
-						<img src="img/daowayApp.png" style="margin: 0 0 0 30px;" width="130" height="auto">
-					</div>
-
+					<script id="fws" type="text/html">
+						<div class="fuwu-qr">
+							<h3>服务商</h3>
+							<img src="{{info.avatar}}">
+							<p>{{name}}</p>
+							<p>成功接单<i>{{info.bill}}</i></p>
+							<p>接单率<i>{{info.billrate}}%</i></p>
+							<p>好评率<i>{{info.goodratings}}%</i></p>
+						</div>
+						<div class="erweima">
+							<img src="img/daowayApp.png" width="130" height="auto">
+						</div>
+					</script>
 				</div>
 			</div>
 		</div>
@@ -261,5 +262,66 @@
 		<p>©2015 版权所有  到位 daoway.com 京ICP备15001471号-1 北京邻家科技有限公司</p>
 	</div>
 </div>
+<script type="text/javascript" src="js/template-web.js"></script>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/qrcode.js"></script>
+<script type="text/javascript">
+    $(function () {
+	    function GetQueryString(name) {
+		    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		    var r = window.location.search.substr(1).match(reg);
+		    if(r!=null)return  unescape(r[2]);
+		    return null;
+	    }
+	    // 获取详情的ID
+	    let detailID = GetQueryString('detailId');
+	    // console.log(detailID)
+
+	    $.get('/service', function (res) {
+		    if (res.code === 0) {
+		        var service = res.data;
+		    }
+
+		    var servviceItem = service.service.filter((value, index) => {
+			    return value.detailId == detailID;
+		    })
+		    // console.log(servviceItem);
+
+		    var serviceDetail = template('serviceDetail', servviceItem[0]);
+		    $('#serviceItem').append(serviceDetail);
+
+		    // 动态生成二维码
+		    var qrcode = new QRCode('qrcode', {
+			    text: 'http://localhost:3000/detail.html?detailId='+detailID,
+			    width: 115,
+			    height: 115,
+			    colorDark : '#000000',
+			    colorLight : '#ffffff',
+			    correctLevel : QRCode.CorrectLevel.H
+		    });
+
+			// 查询到服务商的信息
+		    var fuwushang = service.fuwushang.filter((value,index) => {
+		        return value.serviceId == servviceItem[0].serviceId;
+		    });
+		    // 渲染服务商信息
+		    var fws = template('fws',fuwushang[0]);
+		    $('.rightct').append(fws);
+
+		    // 重新生成一个当前页面的分类数组
+			var category = service.category.filter((value,index) => {
+			    if (value.category == servviceItem[0].category) {
+			        value.CNtag = servviceItem[0].CNtag;
+			        return true;
+			    }
+			})
+		    // console.log(category)
+		    var fenlei = template('fenlei',category[0]);
+			$('.classify').append(fenlei);
+
+	    })
+
+    });
+</script>
 </body>
 </html>
