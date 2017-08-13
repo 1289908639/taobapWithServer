@@ -37,12 +37,12 @@ app.use(bodyParser());
 })*/
 app.post('/info', (req, res) => {
     let info = req.body;
-	
+	console.log(info)
     res.render('info.ejs',info)
 })
 app.post('/login', (req, res) => {
     let login = req.body;
-    if (login.username=='admin'&&login.password=='admin') {
+    if (login.username=='admin123'&&login.password=='admin123') {
         res.send('登录成功，假装有页面！');
     }else {
     	res.send('登录失败，假装有页面！')
@@ -50,8 +50,9 @@ app.post('/login', (req, res) => {
 });
 
 app.post('/regist', (req, res) => {
-	let login = req.body;
-	if (login.username=='admin'&&login.password=='admin') {
+	let regist = req.body;
+	console.log(regist)
+	if (regist.password=='admin') {
 		res.send('注册成功，假装有页面！');
 	}else {
 		res.send('注册失败，假装有页面！')
@@ -78,4 +79,6 @@ app.get('/service', (req,res) => {
 		code:0,
 		data:sdata})
 })
-app.listen(3000);
+app.listen(3000,() => {
+    console.log("server start visit htt://localhost:3000")
+});

@@ -10,6 +10,11 @@
 	<link rel="shortcut icon" href="http://www.daoway.cn/img/favicon.png">
 	<link href="css/bootstrap-3.3.7-dist/css/bootstrap.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	<style type="text/css">
+		.error{
+			color: red;
+		}
+	</style>
 </head>
 
 <body>
@@ -21,24 +26,24 @@
 			<div class="col-md-6">
 				<div class="content">
 					<i class="regist-title"></i>
-					<!--登录界面-->
-					<form class="form-horizontal">
-						<input type="text" class="form-control input-lg regist-pho" placeholder="请输入手机号">
+					<!--注册界面-->
+					<form class="form-horizontal" id="registform" method="post" action="/regist">
+						<input type="text" name="telphone" class="form-control input-lg regist-pho" placeholder="请输入手机号" required minlength="11">
 						<div class="verification">
-							<i></i>
-							<button class="regist-btn">获取验证码</button>
-							<input type="text" class="form-control input-lg" placeholder="请输入图片中的字符串">
+							<i id="varifyPicture"></i>
+							<button type="button" class="regist-btn" id="refresh">获取验证码</button>
+							<input type="text" id="code_input" name="verifyPic" class="form-control input-lg" placeholder="请输入图片中的字符串" required>
 						</div>
-						<input type="text" class="form-control input-lg regist-ver" placeholder="请输入验证码">
-						<input type="password" class="form-control input-lg regist-pw" placeholder="请输入密码">
+						<input type="text" id="verifyNumber" name="verifyNo" class="form-control input-lg regist-ver" placeholder="请输入验证码" required>
+						<input type="password" name="password" class="form-control input-lg regist-pw" placeholder="请输入密码" required>
 						<div class="checkbox regist-check">
 							<label>
-								<input type="checkbox" checked="checked"> <a href="http://www.daoway.com/dian/partials/reg.html">您确认并同意到位用户协议</a>
+								<input type="checkbox" name="agree" checked="checked" required> <a href="http://www.daoway.com/dian/partials/reg.html">您确认并同意到位用户协议</a>
 							</label>
 						</div>
 
 
-						<button type="button" class="btn btn-primary btn-lg login-btn">注册</button>
+						<button type="submit" id="registBtn" class="btn btn-primary btn-lg login-btn">注册</button>
 
 						<div class="regist-login">
 							<a href="/login.html">已有账户？登录</a>
@@ -46,15 +51,46 @@
 
 					</form>
 				</div>
-
-
-
-
 			</div>
 			<div class="col-md-6"></div>
 		</div>
 	</div>
 </div>
+<script type="text/javascript" src="js/jQuery.js"></script>
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/gVerify.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#registform').validate();
 
+
+	    var verifyCode = new GVerify("varifyPicture");
+
+	    $('#registBtn').click(function (ev) {
+	    	ev.preventDefault();
+	    	var verifyNo = $('#verifyNumber')[0].value;
+		    var res = verifyCode.validate(document.getElementById("code_input").value);
+		    if (!res) {
+		    	$('#code_input')[0].value = '';
+			    $('#code_input')[0].focus()
+		    	alert('图片验证码输入错误！');
+			    return
+		    }else if (verifyNo != 8888) {
+			    $('#verifyNumber')[0].value = '';
+			    $('#verifyNumber')[0].focus()
+			    alert('验证码输入错误！');
+			    return
+		    };
+		    with ($('#registform')) {
+		    	submit();
+		    }
+	    });
+	    $('#refresh').click((ev) => {
+		    verifyCode.refresh();
+		    ev.stopPropagation();
+	    })
+
+    });
+</script>
 </body>
 </html>

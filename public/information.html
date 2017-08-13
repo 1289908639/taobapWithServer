@@ -167,65 +167,65 @@
 					       placeholder="填写公司名称">
 				</div>
 			</div>
-			<fieldset class="form-group" id="classify">
+			<div class="form-group" id="classify">
 				<label for="website" class="col-sm-3 control-label">服务项目：</label>
 				<div class="col-sm-9 checkboxstyle">
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">家庭保洁
+							<input name="baojie" type="checkbox">家庭保洁
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">上门按摩
+							<input name="anmo" type="checkbox">上门按摩
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">维修
+							<input name="weixiu" type="checkbox">维修
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">家电清洗
+							<input name="qingxi" type="checkbox">家电清洗
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">洗衣洗鞋
+							<input name="xiyi" type="checkbox">洗衣洗鞋
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">保姆月嫂
+							<input name="baomu" type="checkbox">保姆月嫂
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">搬家
+							<input name="banjia" type="checkbox">搬家
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">上门养车
+							<input name="yangche" type="checkbox">上门养车
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">鲜花
+							<input name="xianhua" type="checkbox">鲜花
 						</label>
 					</div>
 					<div class="checkbox chosemuti">
 						<label>
-							<input name="fenlei" type="checkbox">美容美体
+							<input name="meirong" type="checkbox">美容美体
 						</label>
 					</div>
 					<div class="form-group chosemuti">
 						<label for="other">其他:</label>
-						<input type="text" name="fenlei" class="form-control input-sm inlineinput" id="other" placeholder="其他">
+						<input type="text" name="qita" class="form-control input-sm inlineinput" id="other" placeholder="其他">
 					</div>
 				</div>
-			</fieldset>
+			</div>
 			<div class="form-group">
 				<label for="telphone" class="col-sm-3 control-label" >联系电话：</label>
 				<div class="col-sm-9">
@@ -391,7 +391,7 @@
 <script type="text/javascript">
 	// 表单验证
 	$(function () {
-        $('.checkboxstyle').append($('#fenlei-error').detach())
+        //$('.checkboxstyle').append($('#fenlei-error').detach())
 		//$('#fenlei-error').parent().parent().css("display","none");
 		//console.log($('#fenlei-error').parent())
 		// 在键盘按下并释放及提交后验证提交表单
@@ -444,13 +444,13 @@
 				}
 			}
 		});
-		$('#subinfo').click(function () {
+		/*$('#subinfo').click(function () {
 		    setTimeout(function () {
                 $('.checkboxstyle').append($('#fenlei-error').detach());
                 $('#fenlei-error').css("display",'inline-block')
             },10)
 
-        })
+        })*/
 	});
 </script>
 </html>

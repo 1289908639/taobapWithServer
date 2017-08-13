@@ -22,15 +22,15 @@
 				<div class="content">
 					<i class="login-title"></i>
 					<!--登录界面-->
-					<form class="form-horizontal" action="/login" method="post">
+					<form class="form-horizontal" id="loginform" action="/login" method="post">
 						<div class="form-wrap">
 							<div class="input-group input-group-lg">
-								<span class="input-group-addon glyphicon glyphicon-user" id="username" style="margin: 0"> </span>
-								<input type="text" class="form-control" placeholder="Username">
+								<span class="input-group-addon glyphicon glyphicon-user" style="margin: 0"> </span>
+								<input type="text" name="username" class="form-control" placeholder="Username" required minlength="5">
 							</div>
 							<div class="input-group input-group-lg">
-								<span class="input-group-addon glyphicon glyphicon-lock" id="password" style="margin: 0"></span>
-								<input type="password" class="form-control" placeholder="Passwword">
+								<span class="input-group-addon glyphicon glyphicon-lock" style="margin: 0"></span>
+								<input type="password" name="password"  class="form-control" placeholder="Passwword" required minlength="6">
 							</div>
 						</div>
 						<button type="submit" class="btn btn-primary btn-lg login-btn">登录</button>
@@ -49,7 +49,9 @@
 <script type="text/javascript" src="js/jQuery.js"></script>
 <script type="text/javascript" src="js/jquery.validate.js"></script>
 <script type="text/javascript">
-
+	$(function () {
+		// $("#loginform").validate();
+	});
 </script>
 </body>
 </html>

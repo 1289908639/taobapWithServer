@@ -12,6 +12,16 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/header.css">
+    <style type="text/css">
+        #info{
+            width: 1200px;
+            margin:0 auto;
+            background-color: #fff;
+        }
+        #xiangmu{
+            margin-left: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -66,7 +76,59 @@
         </nav>
     </div>
 </header>
+<div id="info">
+    <ul>
+        <li>公司名称：<%- corpname%></li>
+        <li>服务项目:
+            <ul id="xiangmu">
+                <% if (typeof baojie == 'string') { %>
+                    <li>保洁</li>
+                <% } %>
+                <% if (typeof anmo == 'string') { %>
+                    <li>上门按摩</li>
+                <% } %>
+                <% if (typeof weixiu == 'string') { %>
+                    <li>上门维修</li>
+                <% } %>
+                <% if (typeof qingxi == 'string') { %>
+                    <li>家电清洗</li>
+                <% } %>
+                <% if (typeof xiyi == 'string') { %>
+                    <li>洗衣洗鞋</li>
+                <% } %>
+                <% if (typeof baomu == 'string') { %>
+                    <li>保姆月嫂</li>
+                <% } %>
+                <% if (typeof banjia == 'string') { %>
+                    <li>搬家</li>
+                <% } %>
+                <% if (typeof yangche == 'string') { %>
+                    <li>上门养车</li>
+                <% } %>
+                <% if (typeof xianhua == 'string') { %>
+                    <li>鲜花</li>
+                <% } %>
+                <% if (typeof meirong == 'string') { %>
+                    <li>美容</li>
+                <% } %>
+                <% if (typeof qita == 'string') { %>
+                    <li><%= qita%></li>
+                <% } %>
 
+            </ul>
+        </li>
+        <li>联系电话：<%- telphone%></li>
+        <li>联系人：<%- contactperson%></li>
+        <li>服务城市：<%- servercity%></li>
+        <li>服务能力：<%- ability%></li>
+        <li>微信公众平台：<%- openserv%></li>
+        <li>网址：<%- website%></li>
+    </ul>
+
+
+
+
+</div>
 
 <!--footer 部分-->
 <div class="baozhang" id="baozhang">
